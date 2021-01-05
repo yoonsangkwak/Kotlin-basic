@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="item_number_width">30dp</dimen>
+    <dimen name="item_date_width">90dp</dimen>
+    <dimen name="sub_detail">30sp</dimen>
+</resources>
