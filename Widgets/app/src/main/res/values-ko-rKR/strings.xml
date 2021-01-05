@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">위젯</string>
+    <string name="button1_text">나는 버튼</string>
+    <string name="hello">안녕하세요</string>
+</resources>
