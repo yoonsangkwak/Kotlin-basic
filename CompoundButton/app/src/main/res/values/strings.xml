@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">CompoundButton</string>
+    <string name="radioApple">사과</string>
+    <string name="radioBanana">바나나</string>
+    <string name="radioOrange">오렌지</string>
+</resources>
