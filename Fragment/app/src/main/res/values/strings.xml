@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Fragment</string>
+    <string name="text_main">Activity</string>
+    <string name="list_fragment_title">List</string>
+    <string name="detail_fragment_title">Detail</string>
+    <string name="btn_next">Next</string>
+    <string name="btn_back">Back</string>
+</resources>
