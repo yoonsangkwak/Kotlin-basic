@@ -18,7 +18,7 @@ class OpenInternet : AppCompatActivity() {
             val intent = Intent(Intent.ACTION_VIEW, Uri.parse(address_edit_text.text.toString()))
             startActivity(intent)
         }
-        
+
         address_edit_text.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
                 Log.d("edit", "beforeTextChanged : " + s)
