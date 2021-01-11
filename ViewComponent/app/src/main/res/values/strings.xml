@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ViewComponent</string>
+
+    <string name="hello">안녕하세요 누구누구 입니다 안녕안녕</string>
 </resources>
