@@ -8,6 +8,9 @@ import android.widget.TextView
 import kotlinx.android.synthetic.main.activity_listener.*
 
 class Listener : AppCompatActivity() {
+
+    var number = 10
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_listener)
@@ -34,6 +37,15 @@ class Listener : AppCompatActivity() {
         val click = object : View.OnClickListener {
             override fun onClick(v: View?) {
                 Log.d("click", "Click!!")
+
+                // 뷰를 조작하는 함수들
+                // 1. setText
+                hello.setText("안녕하세요")
+                // 2. setImageResource
+                image.setImageResource(R.drawable.youtube)
+
+                number += 10
+                Log.d("number", number.toString())
             }
         }
         hello.setOnClickListener(click)
