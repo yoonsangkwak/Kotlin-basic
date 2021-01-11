@@ -63,13 +63,14 @@ class Calculator : AppCompatActivity() {
 
         plus.setOnClickListener {
             resultList.add(new.toInt())
-            if (calcStack.isEmpty()) {
+            if (calcStack.size == 0) {
                 calcStack.add("+")
             } else {
-                if (priority(calcStack[calcStack.size - 1]) < priority("+")) {
+                if (priority("+") < priority(calcStack[calcStack.size - 1])) {
                     calcStack.add("+")
                 } else {
                     resultList.add(calcStack.removeLast())
+                    calcStack.add("+")
                 }
             }
             new = ""
@@ -77,13 +78,14 @@ class Calculator : AppCompatActivity() {
 
         minus.setOnClickListener {
             resultList.add(new.toInt())
-            if (calcStack.isEmpty()) {
+            if (calcStack.size == 0) {
                 calcStack.add("-")
             } else {
-                if (priority(calcStack[calcStack.size - 1]) < priority("-")) {
+                if (priority("-") < priority(calcStack[calcStack.size - 1])) {
                     calcStack.add("-")
                 } else {
                     resultList.add(calcStack.removeLast())
+                    calcStack.add("-")
                 }
             }
             new = ""
@@ -91,13 +93,14 @@ class Calculator : AppCompatActivity() {
 
         multiply.setOnClickListener {
             resultList.add(new.toInt())
-            if (calcStack.isEmpty()) {
+            if (calcStack.size == 0) {
                 calcStack.add("*")
             } else {
-                if (priority(calcStack[calcStack.size - 1]) < priority("*")) {
+                if (priority("*") < priority(calcStack[calcStack.size - 1])) {
                     calcStack.add("*")
                 } else {
                     resultList.add(calcStack.removeLast())
+                    calcStack.add("*")
                 }
             }
             new = ""
@@ -105,13 +108,14 @@ class Calculator : AppCompatActivity() {
 
         divide.setOnClickListener {
             resultList.add(new.toInt())
-            if (calcStack.isEmpty()) {
+            if (calcStack.size == 0) {
                 calcStack.add("/")
             } else {
-                if (priority(calcStack[calcStack.size - 1]) < priority("/")) {
+                if (priority("/") < priority(calcStack[calcStack.size - 1])) {
                     calcStack.add("/")
                 } else {
                     resultList.add(calcStack.removeLast())
+                    calcStack.add("/")
                 }
             }
             new = ""
@@ -119,7 +123,7 @@ class Calculator : AppCompatActivity() {
 
         equal.setOnClickListener {
             resultList.add(new.toInt())
-            while (calcStack.isNotEmpty()) {
+            while (calcStack.size != 0) {
                 resultList.add(calcStack.removeLast())
             }
 
@@ -148,6 +152,9 @@ class Calculator : AppCompatActivity() {
             }
 
             result.setText(postSix(resultList).toString())
+            calcStack.clear()
+            resultList.clear()
+            new = ""
         }
 
         clearAll.setOnClickListener {
