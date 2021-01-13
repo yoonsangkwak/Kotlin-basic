@@ -11,17 +11,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TabPager2Activity">
+        <activity android:name=".SharedPreferenceActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TabPagerActivity">
+        <activity android:name=".TabPager2Activity">
 
         </activity>
-        <activity android:name=".RecyclerViewPhoneBookActivity"></activity>
+        <activity android:name=".TabPagerActivity"></activity>
+        <activity android:name=".RecyclerViewPhoneBookActivity" />
         <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".ListViewPhoneBookActivity" />
         <activity android:name=".ListViewActivity" />
