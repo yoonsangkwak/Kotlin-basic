@@ -19,10 +19,22 @@
 
         <TextView
             android:id="@+id/person_name"
-            android:layout_width="match_parent"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
+            android:layout_weight="1"
             android:gravity="center"
             android:text="사용자"
+            android:textColor="#292121"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/person_number"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="010-1234-5678"
             android:textColor="#292121"
             android:textSize="20dp"
             android:textStyle="bold" />
