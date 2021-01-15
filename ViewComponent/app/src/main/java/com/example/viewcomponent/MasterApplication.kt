@@ -1,8 +1,7 @@
-package com.example.viewcomponent.instagram
+package com.example.viewcomponent
 
 import android.app.Application
 import android.content.Context
-import com.example.viewcomponent.android_practice.RetrofitService
 import com.facebook.stetho.Stetho
 import com.facebook.stetho.okhttp3.StethoInterceptor
 import okhttp3.Interceptor
@@ -29,9 +28,9 @@ class MasterApplication : Application() {
 
             if (checkIsLogin()) {
                 getUserToken()?.let { token ->
-                val request = original.newBuilder()
-                    .header("Authorization", "token " + token)
-                    .build()
+                    val request = original.newBuilder()
+                        .header("Authorization", "token " + token)
+                        .build()
                     it.proceed(request)
                 }
             } else {

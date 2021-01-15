@@ -10,6 +10,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.viewcomponent.R
+import com.example.viewcomponent.RetrofitService
 import kotlinx.android.synthetic.main.activity_retrofit_recycler.*
 import retrofit2.Call
 import retrofit2.Callback

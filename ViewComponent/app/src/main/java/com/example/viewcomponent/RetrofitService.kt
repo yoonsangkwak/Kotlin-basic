@@ -1,11 +1,8 @@
-package com.example.viewcomponent.android_practice
+package com.example.viewcomponent
 
-import com.example.viewcomponent.instagram.Register
-import com.example.viewcomponent.instagram.User
+import com.example.viewcomponent.android_practice.PersonFromServer
 import retrofit2.Call
-import retrofit2.http.Body
-import retrofit2.http.GET
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface RetrofitService {
 
@@ -23,7 +20,10 @@ interface RetrofitService {
     ): Call<PersonFromServer>
 
     @POST("user/signup/")
+    @FormUrlEncoded
     fun register(
-        @Body register: Register
+        @Field("username") username: String,
+        @Field("password1") password1: String,
+        @Field("password2") password2: String,
     ): Call<User>
 }

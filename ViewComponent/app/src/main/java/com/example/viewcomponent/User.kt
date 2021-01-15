@@ -1,4 +1,4 @@
-package com.example.viewcomponent.instagram
+package com.example.viewcomponent
 
 import java.io.Serializable
 
