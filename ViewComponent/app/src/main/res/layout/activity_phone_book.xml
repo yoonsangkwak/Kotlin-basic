@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".PhoneBookActivity">
+    tools:context=".android_practice.PhoneBookActivity">
 
     <TextView
         android:layout_width="match_parent"

@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".Calculator">
+    tools:context=".android_practice.Calculator">
 
     <LinearLayout
         android:layout_width="match_parent"

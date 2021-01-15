@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="right"
-    tools:context=".MainActivity">
+    tools:context=".android_practice.MainActivity">
 
     <TextView
         android:layout_width="wrap_content"
