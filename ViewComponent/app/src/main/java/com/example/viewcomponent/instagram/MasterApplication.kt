@@ -16,9 +16,10 @@ class MasterApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        
+
         Stetho.initializeWithDefaults(this)
         createRetrofit()
+        // chrome://inspect/#devices
     }
 
     fun createRetrofit() {
