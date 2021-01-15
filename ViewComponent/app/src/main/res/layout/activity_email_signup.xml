@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    android:orientation="vertical"
+    tools:context=".instagram.EmailSignupActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:text="OutStagram"
+        android:fontFamily="serif"
+        android:textStyle="bold|italic"
+        android:textColor="#000000"
+        android:textSize="60sp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textColor="#9C9999"
+        android:textSize="24sp"
+        android:text="친구들의 사진과 동영상을 보려면 가입하세요." />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:paddingTop="30dp"
+        android:paddingLeft="56dp"
+        android:paddingRight="56dp"
+        android:paddingBottom="30dp"
+        android:orientation="vertical">
+
+        <EditText
+            android:id="@+id/username_inputbox"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="12dp"
+            android:background="#F1EEEE"
+            android:gravity="center"
+            android:hint="아이디를 입력해주세요"
+            android:textSize="20sp"
+            android:textColorHint="#3e3e3e" />
+
+        <EditText
+            android:id="@+id/password1_inputbox"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="12dp"
+            android:background="#F1EEEE"
+            android:gravity="center"
+            android:hint="비밀번호를 입력해주세요"
+            android:textSize="20sp"
+            android:textColorHint="#3e3e3e" />
+
+        <EditText
+            android:id="@+id/password2_inputbox"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="6dp"
+            android:background="#F1EEEE"
+            android:gravity="center"
+            android:hint="비밀번호를 다시 입력해주세요"
+            android:textSize="20sp"
+            android:textColorHint="#3e3e3e" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/register"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingLeft="32dp"
+        android:paddingTop="16dp"
+        android:paddingRight="32dp"
+        android:paddingBottom="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#E91E63"
+        android:textSize="18dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:text="회원가입" />
+
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:paddingLeft="32dp"
+        android:paddingTop="16dp"
+        android:paddingRight="32dp"
+        android:paddingBottom="16dp"
+        android:background="#E91E63"
+        android:textSize="18dp"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        android:text="로그인" />
+
+</LinearLayout>

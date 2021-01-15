@@ -12,42 +12,43 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".RetrofitRecyclerActivity">
+        <activity android:name=".instagram.EmailSignupActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".PermissionActivity">
+        <activity android:name=".android_practice.RetrofitRecyclerActivity">
 
         </activity>
-        <activity android:name=".RetrofitActivity"></activity>
-        <activity android:name=".NetworkActivity" />
-        <activity android:name=".AsyncActivity" />
-        <activity android:name=".RealmActivity" />
-        <activity android:name=".SharedPreferenceActivity" />
-        <activity android:name=".TabPager2Activity" />
-        <activity android:name=".TabPagerActivity" />
-        <activity android:name=".RecyclerViewPhoneBookActivity" />
-        <activity android:name=".RecyclerViewActivity" />
-        <activity android:name=".ListViewPhoneBookActivity" />
-        <activity android:name=".ListViewActivity" />
-        <activity android:name=".PhoneBookDetailActivity" />
-        <activity android:name=".PhoneBookActivity" />
-        <activity android:name=".AddViewActivity" />
-        <activity android:name=".LibraryActivity" />
-        <activity android:name=".ThreadActivity" />
-        <activity android:name=".Context" />
-        <activity android:name=".Resource" />
-        <activity android:name=".NullSafety" />
-        <activity android:name=".FragmentActivity" />
-        <activity android:name=".OpenInternet" />
-        <activity android:name=".Intent2" />
-        <activity android:name=".Intent1" />
-        <activity android:name=".Calculator" />
-        <activity android:name=".Listener" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".android_practice.PermissionActivity"></activity>
+        <activity android:name=".android_practice.RetrofitActivity" />
+        <activity android:name=".android_practice.NetworkActivity" />
+        <activity android:name=".android_practice.AsyncActivity" />
+        <activity android:name=".android_practice.RealmActivity" />
+        <activity android:name=".android_practice.SharedPreferenceActivity" />
+        <activity android:name=".android_practice.TabPager2Activity" />
+        <activity android:name=".android_practice.TabPagerActivity" />
+        <activity android:name=".android_practice.RecyclerViewPhoneBookActivity" />
+        <activity android:name=".android_practice.RecyclerViewActivity" />
+        <activity android:name=".android_practice.ListViewPhoneBookActivity" />
+        <activity android:name=".android_practice.ListViewActivity" />
+        <activity android:name=".android_practice.PhoneBookDetailActivity" />
+        <activity android:name=".android_practice.PhoneBookActivity" />
+        <activity android:name=".android_practice.AddViewActivity" />
+        <activity android:name=".android_practice.LibraryActivity" />
+        <activity android:name=".android_practice.ThreadActivity" />
+        <activity android:name=".android_practice.Context" />
+        <activity android:name=".android_practice.Resource" />
+        <activity android:name=".android_practice.NullSafety" />
+        <activity android:name=".android_practice.FragmentActivity" />
+        <activity android:name=".android_practice.OpenInternet" />
+        <activity android:name=".android_practice.Intent2" />
+        <activity android:name=".android_practice.Intent1" />
+        <activity android:name=".android_practice.Calculator" />
+        <activity android:name=".android_practice.Listener" />
+        <activity android:name=".android_practice.MainActivity" />
     </application>
 
 </manifest>
