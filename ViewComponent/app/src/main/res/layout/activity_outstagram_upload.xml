@@ -6,35 +6,45 @@
     android:layout_height="match_parent"
     tools:context=".OutstagramUploadActivity">
 
-    <EditText
-        android:id="@+id/content_input"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:hint="내용을 작성해주세요" />
+        android:layout_height="match_parent"
+        android:padding="32dp"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/view_pictures"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_marginBottom="16dp"
-        android:gravity="center"
-        android:background="@color/cardview_dark_background"
-        android:text="사진 선택"
-        android:textColor="#ffffff"
-        android:textSize="40sp"/>
 
-    <TextView
-        android:id="@+id/upload_post"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/view_pictures"
-        android:layout_centerInParent="true"
-        android:gravity="center"
-        android:background="@color/cardview_dark_background"
-        android:text="업로드"
-        android:textColor="#ffffff"
-        android:textSize="40sp"/>
+        <EditText
+            android:id="@+id/content_input"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginBottom="20dp"
+            android:hint="내용을 작성해주세요" />
+
+        <TextView
+            android:id="@+id/view_pictures"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="16dp"
+            android:background="#848B8F"
+            android:gravity="center"
+            android:text="사진 선택"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/upload_post"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_below="@id/view_pictures"
+            android:layout_centerInParent="true"
+            android:background="#848B8F"
+            android:gravity="center"
+            android:text="업로드"
+            android:textColor="#ffffff"
+            android:textSize="30sp" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -46,13 +56,13 @@
             android:id="@+id/all_list"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="전체"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#ffffff"
+            android:layout_weight="1"
             android:background="#E91E63"
             android:gravity="center"
-            android:layout_weight="1" />
+            android:text="전체"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="1dp"
@@ -62,13 +72,13 @@
             android:id="@+id/my_list"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="본인"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#ffffff"
+            android:layout_weight="1"
             android:background="#E91E63"
             android:gravity="center"
-            android:layout_weight="1" />
+            android:text="본인"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="1dp"
@@ -78,13 +88,13 @@
             android:id="@+id/upload"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="업로드"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#ffffff"
+            android:layout_weight="1"
             android:background="#E91E63"
             android:gravity="center"
-            android:layout_weight="1" />
+            android:text="업로드"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <TextView
             android:layout_width="1dp"
@@ -94,13 +104,13 @@
             android:id="@+id/user_info"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:text="정보"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="#ffffff"
+            android:layout_weight="1"
             android:background="#E91E63"
             android:gravity="center"
-            android:layout_weight="1" />
+            android:text="정보"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
 </RelativeLayout>

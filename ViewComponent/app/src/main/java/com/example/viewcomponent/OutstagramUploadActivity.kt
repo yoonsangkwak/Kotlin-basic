@@ -1,11 +1,15 @@
 package com.example.viewcomponent
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
+import android.widget.Toast
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_outstagram_upload.*
 import okhttp3.MediaType
 import okhttp3.MultipartBody
@@ -18,17 +22,35 @@ import java.io.File
 class OutstagramUploadActivity : AppCompatActivity() {
 
     lateinit var filePath: String
+    var checkedPictureNull = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_outstagram_upload)
 
         view_pictures.setOnClickListener {
-            getPicture()
+
+            val permissionCheck = ContextCompat.checkSelfPermission(
+                this@OutstagramUploadActivity,
+                android.Manifest.permission.READ_EXTERNAL_STORAGE
+            )
+            if (permissionCheck != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(
+                    this,
+                    arrayOf(android.Manifest.permission.READ_EXTERNAL_STORAGE),
+                    2000
+                )
+            } else {
+                getPicture()
+            }
         }
 
         upload_post.setOnClickListener {
-            uploadPost()
+            if (checkedPictureNull) {
+                uploadPost()
+            } else {
+                Toast.makeText(this, "사진이 선택되지 않았습니다", Toast.LENGTH_SHORT).show()
+            }
         }
 
         my_list.setOnClickListener {
@@ -49,6 +71,7 @@ class OutstagramUploadActivity : AppCompatActivity() {
         intent.setData(MediaStore.Images.Media.EXTERNAL_CONTENT_URI)
         intent.setType("image/*")
         startActivityForResult(intent, 1000)
+        checkedPictureNull = true
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

@@ -1,30 +1,65 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:padding="16dp"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="60dp"
+    android:background="@drawable/feed_outline"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginRight="16dp"
+            android:src="@drawable/user" />
+
+        <TextView
+            android:id="@+id/post_owner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            android:textStyle="italic" />
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/post_img"
         android:layout_width="match_parent"
         android:layout_height="300dp"
         android:layout_marginBottom="6dp"
-        android:scaleType="centerCrop"/>
+        android:scaleType="centerCrop" />
 
-    <TextView
-        android:id="@+id/post_owner"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="6dp"
-        android:textSize="20sp"
-        android:textColor="#000000" />
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:src="@drawable/baseline_favorite_border_black_24" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:src="@drawable/baseline_chat_bubble_outline_black_24" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/post_content"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textColor="#000000" />
+        android:textColor="#000000"
+        android:textSize="28sp" />
 
 </LinearLayout>
