@@ -13,7 +13,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OutstagramPostListActivity"></activity>
+        <activity android:name=".OutstagramUploadActivity"></activity>
+        <activity android:name=".OutstagramMyPostListActivity" />
+        <activity android:name=".OutstagramUserInfo" />
+        <activity android:name=".OutstagramPostListActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".EmailSignupActivity">
             <intent-filter>

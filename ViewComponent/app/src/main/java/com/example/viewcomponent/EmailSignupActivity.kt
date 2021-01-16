@@ -24,10 +24,16 @@ class EmailSignupActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_email_signup)
 
-        initView(this@EmailSignupActivity)
-        setupListener(this)
+        if ((application as MasterApplication).checkIsLogin()) {
+            finish()
+            startActivity(Intent(this, OutstagramPostListActivity::class.java))
+        } else {
+            setContentView(R.layout.activity_email_signup)
+            initView(this@EmailSignupActivity)
+            setupListener(this)
+        }
+
     }
 
     fun setupListener(activity: Activity) {

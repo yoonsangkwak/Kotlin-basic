@@ -1,5 +1,6 @@
 package com.example.viewcomponent
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -34,9 +35,14 @@ class OutstagramPostListActivity : AppCompatActivity() {
                 ) {
                     if (response.isSuccessful) {
                         val postList = response.body()
-                        val adapter = PostAdapter(postList!!, LayoutInflater.from(this@OutstagramPostListActivity), glide)
+                        val adapter = PostAdapter(
+                            postList!!,
+                            LayoutInflater.from(this@OutstagramPostListActivity),
+                            glide
+                        )
                         post_recycler_view.adapter = adapter
-                        post_recycler_view.layoutManager = LinearLayoutManager(this@OutstagramPostListActivity)
+                        post_recycler_view.layoutManager =
+                            LinearLayoutManager(this@OutstagramPostListActivity)
                     }
                 }
 
@@ -44,6 +50,18 @@ class OutstagramPostListActivity : AppCompatActivity() {
                 }
             }
         )
+
+        my_list.setOnClickListener {
+            startActivity(Intent(this, OutstagramMyPostListActivity::class.java))
+        }
+
+        upload.setOnClickListener {
+            startActivity(Intent(this, OutstagramUploadActivity::class.java))
+        }
+
+        user_info.setOnClickListener {
+            startActivity(Intent(this, OutstagramUserInfo::class.java))
+        }
     }
 }
 
@@ -51,9 +69,9 @@ class PostAdapter(
     var postList: ArrayList<Post>,
     val inflater: LayoutInflater,
     val glide: RequestManager
-): RecyclerView.Adapter<PostAdapter.ViewHolder>() {
+) : RecyclerView.Adapter<PostAdapter.ViewHolder>() {
 
-    inner class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val postOwner: TextView
         val postImage: ImageView
         val postContent: TextView
