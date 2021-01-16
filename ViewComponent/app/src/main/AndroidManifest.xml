@@ -13,6 +13,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".OutstagramPostListActivity"></activity>
+        <activity android:name=".LoginActivity" />
         <activity android:name=".EmailSignupActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,10 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".android_practice.RetrofitRecyclerActivity">
-
-        </activity>
-        <activity android:name=".android_practice.PermissionActivity"></activity>
+        <activity android:name=".android_practice.RetrofitRecyclerActivity" />
+        <activity android:name=".android_practice.PermissionActivity" />
         <activity android:name=".android_practice.RetrofitActivity" />
         <activity android:name=".android_practice.NetworkActivity" />
         <activity android:name=".android_practice.AsyncActivity" />

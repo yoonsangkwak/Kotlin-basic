@@ -2,6 +2,7 @@ package com.example.viewcomponent
 
 import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -34,9 +35,9 @@ class EmailSignupActivity : AppCompatActivity() {
             register(this@EmailSignupActivity)
         }
         login.setOnClickListener {
-            val sp = activity.getSharedPreferences("login_sp", Context.MODE_PRIVATE)
-            val token = sp.getString("login_sp", "")
-            Log.d("abcc", "token : " + token)
+            startActivity(
+                Intent(this@EmailSignupActivity, LoginActivity::class.java)
+            )
         }
     }
 
@@ -55,6 +56,9 @@ class EmailSignupActivity : AppCompatActivity() {
                         val token = user!!.token!!
                         saveUserToken(token, activity)
                         (application as MasterApplication).createRetrofit()
+                        activity.startActivity(
+                            Intent(activity, OutstagramPostListActivity::class.java)
+                        )
                     }
                 }
 
