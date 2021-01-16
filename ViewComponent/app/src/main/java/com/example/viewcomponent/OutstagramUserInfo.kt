@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_outstagram_post_list.*
 import kotlinx.android.synthetic.main.activity_outstagram_post_list.all_list
 import kotlinx.android.synthetic.main.activity_outstagram_post_list.my_list
 import kotlinx.android.synthetic.main.activity_outstagram_post_list.upload
