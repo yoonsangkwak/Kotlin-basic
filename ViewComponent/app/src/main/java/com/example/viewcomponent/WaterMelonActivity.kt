@@ -2,6 +2,8 @@ package com.example.viewcomponent
 
 import android.app.Activity
 import android.content.Intent
+import android.media.MediaPlayer
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -16,8 +18,12 @@ import kotlinx.android.synthetic.main.activity_water_melon.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import java.lang.Exception
 
 class WaterMelonActivity : AppCompatActivity() {
+
+    var mediaPlayer: MediaPlayer? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_water_melon)
@@ -46,6 +52,12 @@ class WaterMelonActivity : AppCompatActivity() {
         )
     }
 
+    override fun onPause() {
+        mediaPlayer?.stop()
+        mediaPlayer?.release()
+        super.onPause()
+    }
+
     inner class MelonAdapter(
         var songList: ArrayList<Song>,
         val inflater: LayoutInflater,
@@ -63,8 +75,22 @@ class WaterMelonActivity : AppCompatActivity() {
                 thumbnail = itemView.findViewById(R.id.song_img)
                 play = itemView.findViewById(R.id.song_play)
 
-                itemView.setOnClickListener {
+                play.setOnClickListener {
                     val position: Int = adapterPosition
+                    val path = songList.get(position).song
+
+                    try {
+                        mediaPlayer?.stop()
+                        mediaPlayer?.release()
+                        mediaPlayer = null
+                        mediaPlayer = MediaPlayer.create(
+                            this@WaterMelonActivity,
+                            Uri.parse(path)
+                        )
+                        mediaPlayer?.start()
+                    } catch (e: Exception) {
+
+                    }
                 }
             }
         }
