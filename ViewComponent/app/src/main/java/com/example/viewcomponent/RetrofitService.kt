@@ -21,6 +21,8 @@ interface RetrofitService {
         @Body person: PersonFromServer
     ): Call<PersonFromServer>
 
+
+    // Instagram
     @POST("user/signup/")
     @FormUrlEncoded
     fun register(
@@ -48,4 +50,9 @@ interface RetrofitService {
 
     @GET("instagram/post/list/")
     fun getUserPostList(): Call<ArrayList<Post>>
+
+
+    // Youtube
+    @GET("youtube/list/")
+    fun getYoutubeList():Call<ArrayList<Youtube>>
 }
