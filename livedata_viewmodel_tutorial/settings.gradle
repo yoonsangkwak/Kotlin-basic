@@ -1,0 +1,2 @@
+include ':app'
+rootProject.name = "livedata_viewmodel_tutorial"
