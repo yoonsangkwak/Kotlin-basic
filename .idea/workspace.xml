@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c3c724fe-537e-4dda-adeb-3f57e2965a1f" name="Default Changelist" comment="" />
+    <list default="true" id="c3c724fe-537e-4dda-adeb-3f57e2965a1f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BottomNavigationViewWithNavigation/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BottomNavigationViewWithNavigation/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BottomNavigationViewWithNavigation/app/src/main/java/site/yoonsang/bottomnavigationviewwithnavigation/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/BottomNavigationViewWithNavigation/app/src/main/java/site/yoonsang/bottomnavigationviewwithnavigation/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecyclerView/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RecyclerView/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecyclerView/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/RecyclerView/.idea/misc.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +22,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1nV92YIE5ajv5WwWjcr0eO9fp0F" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -25,6 +34,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
@@ -32,9 +42,7 @@
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
+      <method v="2" />
     </configuration>
   </component>
   <component name="SvnConfiguration">
@@ -51,9 +59,9 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1611464353078">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1616981838910">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1611464353078" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1616981838910" />
   </component>
 </project>
