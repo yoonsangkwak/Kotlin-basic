@@ -3,8 +3,12 @@ package site.yoonsang.modernandroid
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.Observer
+import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import site.yoonsang.modernandroid.databinding.ActivityMainBinding
+import kotlin.coroutines.coroutineContext
 
 class MainActivity : AppCompatActivity() {
 
@@ -18,7 +22,7 @@ class MainActivity : AppCompatActivity() {
         val db = Room.databaseBuilder(
             applicationContext,
             AppDatabase::class.java, "database-name"
-        ).allowMainThreadQueries().build()
+        ).build()
 
 
         db.todoDao().getAll().observe(this, Observer { todos ->
@@ -26,7 +30,9 @@ class MainActivity : AppCompatActivity() {
         })
 
         binding.btnAdd.setOnClickListener {
-            db.todoDao().insert(Todo(binding.editTodo.text.toString()))
+            lifecycleScope.launch(Dispatchers.IO) {
+                db.todoDao().insert(Todo(binding.editTodo.text.toString()))
+            }
         }
     }
 }
