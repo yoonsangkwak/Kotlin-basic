@@ -2,6 +2,7 @@ package site.yoonsang.modernandroid
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.Observer
 import androidx.room.Room
 import site.yoonsang.modernandroid.databinding.ActivityMainBinding
 
@@ -20,11 +21,12 @@ class MainActivity : AppCompatActivity() {
         ).allowMainThreadQueries().build()
 
 
-        binding.resultText.text = db.todoDao().getAll().toString()
+        db.todoDao().getAll().observe(this, Observer { todos ->
+            binding.resultText.text = todos.toString()
+        })
 
         binding.btnAdd.setOnClickListener {
             db.todoDao().insert(Todo(binding.editTodo.text.toString()))
-            binding.resultText.text = db.todoDao().getAll().toString()
         }
     }
 }
