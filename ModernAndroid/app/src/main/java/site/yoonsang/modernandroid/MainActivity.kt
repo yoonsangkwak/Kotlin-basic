@@ -2,7 +2,9 @@ package site.yoonsang.modernandroid
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.viewModels
 import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.room.Room
 import kotlinx.coroutines.Dispatchers
@@ -19,19 +21,15 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val db = Room.databaseBuilder(
-            applicationContext,
-            AppDatabase::class.java, "database-name"
-        ).build()
+        val viewModel = ViewModelProvider(this).get(MainViewModel::class.java)
 
-
-        db.todoDao().getAll().observe(this, Observer { todos ->
+        viewModel.getAll().observe(this, Observer { todos ->
             binding.resultText.text = todos.toString()
         })
 
         binding.btnAdd.setOnClickListener {
             lifecycleScope.launch(Dispatchers.IO) {
-                db.todoDao().insert(Todo(binding.editTodo.text.toString()))
+                viewModel.insert(Todo(binding.editTodo.text.toString()))
             }
         }
     }
