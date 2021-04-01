@@ -1,27 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
     <data>
+
         <variable
             name="activity"
             type="site.yoonsang.databindingpractice.MainActivity" />
+
+        <variable
+            name="site"
+            type="site.yoonsang.databindingpractice.ObservableData" />
     </data>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-        <Button
-            android:id="@+id/btnSample"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="@{activity::btnClick}"
-            android:text="button" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/mainRcv"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    </LinearLayout>
+            <Button
+                android:id="@+id/btnSample"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{activity::btnClick}"
+                android:text="button" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/mainRcv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+            <EditText
+                android:id="@+id/siteEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:text="@={site.site}" />
+
+            <TextView
+                android:id="@+id/siteName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{site.site}"
+                tools:text="siteName" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
 </layout>

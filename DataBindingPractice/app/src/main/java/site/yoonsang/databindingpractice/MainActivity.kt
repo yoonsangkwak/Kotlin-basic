@@ -2,6 +2,7 @@ package site.yoonsang.databindingpractice
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
 import android.view.View
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.activity = this@MainActivity
         setRcv()
+        setObserv()
     }
 
     fun btnClick(view: View) {
@@ -33,5 +35,17 @@ class MainActivity : AppCompatActivity() {
             ProfileData(profile = getString(R.string.img), name = "Kwak", age = 26),
         )
         profileAdapter.notifyDataSetChanged()
+    }
+
+    fun setObserv() {
+        var item = ObservableData()
+        item.site = "Naver"
+        binding.site = item
+
+        Handler().postDelayed(Runnable {
+            run {
+                item.site = "Google"
+            }
+        }, 3000)
     }
 }
