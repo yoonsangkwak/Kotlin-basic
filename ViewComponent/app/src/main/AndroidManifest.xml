@@ -16,11 +16,7 @@
         android:usesCleartextTraffic="true"
         android:theme="@style/AppTheme">
         <activity android:name=".WaterMelonActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".MyTubeDetailActivity" />
         <activity android:name=".MyTubeActivity">
@@ -57,7 +53,13 @@
         <activity android:name=".android_practice.OpenInternet" />
         <activity android:name=".android_practice.Intent2" />
         <activity android:name=".android_practice.Intent1" />
-        <activity android:name=".android_practice.Calculator" />
+        <activity android:name=".android_practice.Calculator">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".android_practice.Listener" />
         <activity android:name=".android_practice.MainActivity" />
     </application>
