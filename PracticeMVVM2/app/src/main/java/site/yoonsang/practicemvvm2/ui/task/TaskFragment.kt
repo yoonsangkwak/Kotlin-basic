@@ -1,8 +1,12 @@
 package site.yoonsang.practicemvvm2.ui.task
 
+import android.app.Activity
+import android.content.Context
 import android.os.Bundle
 import android.view.*
+import android.view.inputmethod.InputMethodManager
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
@@ -74,17 +78,55 @@ class TaskFragment : Fragment() {
             }
         }).attachToRecyclerView(binding.recyclerView)
         setHasOptionsMenu(true)
+        hideKeyboard(requireActivity())
         return binding.root
+    }
+
+    private fun hideKeyboard(activity: Activity) {
+        val inputMethodManager =
+            activity.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+        val currentFocusedView = activity.currentFocus
+        currentFocusedView.let {
+            inputMethodManager.hideSoftInputFromWindow(
+                currentFocusedView?.windowToken, InputMethodManager.HIDE_NOT_ALWAYS
+            )
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.task_menu, menu)
+        val searchItem = menu.findItem(R.id.action_search)
+        val searchView = searchItem.actionView as SearchView
+        searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
+            override fun onQueryTextSubmit(query: String?): Boolean {
+                return true
+            }
+
+            override fun onQueryTextChange(newText: String?): Boolean {
+                if (newText != null) {
+                    runQuery(newText)
+                }
+                return true
+            }
+        })
+    }
+
+    fun runQuery(query: String) {
+        val searchQuery = "%$query%"
+        viewModel.searchDatabase(searchQuery).observe(viewLifecycleOwner, { tasks ->
+            adapter.submitList(tasks)
+        })
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.action_delete_all -> deleteAllItem()
+            R.id.action_priority -> viewModel.getAllPriorityTasks.observe(
+                viewLifecycleOwner,
+                { tasks ->
+                    adapter.submitList(tasks)
+                })
         }
         return super.onOptionsItemSelected(item)
     }
