@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/newsFragment"
+        android:title="뉴스"
+        android:icon="@drawable/ic_article" />
+
+    <item
+        android:id="@+id/libraryFragment"
+        android:title="저장된 뉴스"
+        android:icon="@drawable/ic_library" />
+</menu>
