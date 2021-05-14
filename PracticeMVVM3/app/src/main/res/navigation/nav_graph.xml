@@ -27,5 +27,9 @@
         android:id="@+id/detailFragment"
         android:name="site.yoonsang.practicemvvm3.views.DetailFragment"
         android:label="상세보기"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="News"
+            app:argType="site.yoonsang.practicemvvm3.models.News" />
+    </fragment>
 </navigation>

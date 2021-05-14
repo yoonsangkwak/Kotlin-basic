@@ -1,0 +1,27 @@
+package site.yoonsang.practicemvvm3.database
+
+import androidx.lifecycle.LiveData
+import androidx.room.*
+import site.yoonsang.practicemvvm3.models.BookmarkNews
+
+@Dao
+interface BookmarkNewsDao {
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(bookmarkNews: BookmarkNews)
+
+    @Query("select * from bookmark_table")
+    fun getBookmarkNews(): LiveData<List<BookmarkNews>>
+
+    @Query("select count(*) from bookmark_table where bookmark_table.title = :title")
+    suspend fun checkNews(title: String): Int
+
+    @Query("delete from bookmark_table where bookmark_table.title = :title")
+    suspend fun removeFromBookmark(title: String): Int
+
+    @Delete
+    suspend fun delete(bookmarkNews: BookmarkNews)
+
+    @Query("delete from bookmark_table")
+    suspend fun deleteAll()
+}
