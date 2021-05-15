@@ -10,16 +10,18 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import dagger.hilt.android.AndroidEntryPoint
 import site.yoonsang.practicemvvm3.R
 import site.yoonsang.practicemvvm3.databinding.FragmentNewsBinding
+import site.yoonsang.practicemvvm3.models.News
 import site.yoonsang.practicemvvm3.viewmodels.NewsViewModel
 import site.yoonsang.practicemvvm3.views.adapters.NewsLoadStateAdapter
 import site.yoonsang.practicemvvm3.views.adapters.NewsPagingAdapter
 
 @AndroidEntryPoint
-class NewsFragment : Fragment() {
+class NewsFragment : Fragment(), NewsPagingAdapter.OnItemClickListener {
 
     private var _binding: FragmentNewsBinding? = null
     private val binding get() = _binding!!
@@ -39,7 +41,7 @@ class NewsFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
-        val adapter = NewsPagingAdapter()
+        val adapter = NewsPagingAdapter(this)
         binding.newsRecyclerView.adapter = adapter
 //        binding.newsRecyclerView.apply {
 //            adapter = adapter.withLoadStateHeaderAndFooter(
@@ -67,5 +69,9 @@ class NewsFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onItemClick(news: News) {
+        findNavController().navigate(NewsFragmentDirections.actionNewsFragmentToDetailFragment(news))
     }
 }

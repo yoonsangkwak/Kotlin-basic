@@ -9,6 +9,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 class BookmarkNews(
     @PrimaryKey(autoGenerate = true)
+    val id: Int,
     val description: String,
     val link: String,
     val originalLink: String,

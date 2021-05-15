@@ -21,9 +21,9 @@ import site.yoonsang.practicemvvm3.viewmodels.DetailViewModel
 @AndroidEntryPoint
 class DetailFragment : Fragment() {
 
+    private val viewModel by viewModels<DetailViewModel>()
     private var _binding: FragmentDetailBinding? = null
     private val binding get() = _binding!!
-    private val viewModel by viewModels<DetailViewModel>()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,7 +45,7 @@ class DetailFragment : Fragment() {
 
         var _isChecked = false
         CoroutineScope(Dispatchers.Main).launch {
-            val count = viewModel.checkNews(news.title)
+            val count = viewModel.checkNews(news.hashCode().toString())
 
             withContext(Dispatchers.Main) {
                 if (count > 0) {
@@ -63,6 +63,7 @@ class DetailFragment : Fragment() {
             if (_isChecked) {
                 viewModel.addToBookmark(
                     BookmarkNews(
+                        news.hashCode(),
                         news.description,
                         news.link,
                         news.originallink,

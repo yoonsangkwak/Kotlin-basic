@@ -23,9 +23,9 @@ class BookmarkRepository @Inject constructor(private val bookmarkNewsDao: Bookma
 
     fun getBookmarkNews(): LiveData<List<BookmarkNews>> = bookmarkNewsDao.getBookmarkNews()
 
-    suspend fun checkNews(title: String) = bookmarkNewsDao.checkNews(title)
+    suspend fun checkNews(id: String) = bookmarkNewsDao.checkNews(id)
 
-    suspend fun removeFromBookmark(title: String) {
-        bookmarkNewsDao.removeFromBookmark(title)
+    suspend fun removeFromBookmark(id: String) {
+        bookmarkNewsDao.removeFromBookmark(id)
     }
 }

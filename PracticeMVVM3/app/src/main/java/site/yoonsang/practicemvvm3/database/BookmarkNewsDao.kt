@@ -13,11 +13,11 @@ interface BookmarkNewsDao {
     @Query("select * from bookmark_table")
     fun getBookmarkNews(): LiveData<List<BookmarkNews>>
 
-    @Query("select count(*) from bookmark_table where bookmark_table.title = :title")
-    suspend fun checkNews(title: String): Int
+    @Query("select count(*) from bookmark_table where bookmark_table.id = :id")
+    suspend fun checkNews(id: String): Int
 
-    @Query("delete from bookmark_table where bookmark_table.title = :title")
-    suspend fun removeFromBookmark(title: String): Int
+    @Query("delete from bookmark_table where bookmark_table.id = :id")
+    suspend fun removeFromBookmark(id: String): Int
 
     @Delete
     suspend fun delete(bookmarkNews: BookmarkNews)

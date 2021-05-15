@@ -19,11 +19,11 @@ class DetailViewModel @Inject constructor(private val repository: BookmarkReposi
         }
     }
 
-    suspend fun checkNews(title: String) = repository.checkNews(title)
+    suspend fun checkNews(id: String) = repository.checkNews(id)
 
-    fun removeFromBookmark(title: String) {
+    fun removeFromBookmark(id: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.removeFromBookmark(title)
+            repository.removeFromBookmark(id)
         }
     }
 }

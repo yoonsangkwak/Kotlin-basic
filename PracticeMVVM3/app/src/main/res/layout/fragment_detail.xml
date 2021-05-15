@@ -18,6 +18,7 @@
             android:id="@+id/detail_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{news.title}"
             android:textColor="@color/black"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -29,6 +30,7 @@
             android:id="@+id/detail_pub_date"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="@{news.pubDate}"
             app:layout_constraintTop_toTopOf="@id/detail_save_toggle_button"
             app:layout_constraintBottom_toBottomOf="@id/detail_save_toggle_button"
             app:layout_constraintStart_toStartOf="parent" />
@@ -49,6 +51,7 @@
             android:id="@+id/detail_description"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:text="@{news.description}"
             android:textColor="@color/black"
             app:layout_constraintBottom_toTopOf="@id/detail_link_button"
             app:layout_constraintEnd_toEndOf="parent"
