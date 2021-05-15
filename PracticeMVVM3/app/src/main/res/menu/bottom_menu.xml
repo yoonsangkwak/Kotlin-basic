@@ -6,7 +6,7 @@
         android:icon="@drawable/ic_article" />
 
     <item
-        android:id="@+id/libraryFragment"
+        android:id="@+id/bookmarkFragment"
         android:title="저장된 뉴스"
         android:icon="@drawable/ic_library" />
 </menu>
