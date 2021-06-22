@@ -1,0 +1,100 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs.kotlin'
+}
+
+def propertiesFile = rootProject.file("local.properties")
+def properties = new Properties()
+properties.load(new FileInputStream(propertiesFile))
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.3"
+
+    buildFeatures {
+        dataBinding = true
+    }
+
+    defaultConfig {
+        applicationId "site.yoonsang.koinpractice"
+        minSdkVersion 23
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "API_KEY", properties['API_KEY'])
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.5.0'
+    implementation 'androidx.appcompat:appcompat:1.3.0'
+    implementation 'com.google.android.material:material:1.3.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+
+    // Navigation Component
+    //noinspection GradleDependency
+    implementation "androidx.navigation:navigation-fragment-ktx:$navigationVersion"
+    implementation "androidx.navigation:navigation-ui-ktx:$navigationVersion"
+
+    // Retrofit + GSON
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.squareup.retrofit2:adapter-rxjava3:2.9.0"
+
+    // Paging 3
+    implementation "androidx.paging:paging-runtime-ktx:$pagingVersion"
+    implementation "androidx.paging:paging-rxjava3:$pagingVersion"
+
+    // Room components
+    implementation "androidx.room:room-runtime:$roomVersion"
+    annotationProcessor "androidx.room:room-compiler:$roomVersion"
+    androidTestImplementation "androidx.room:room-testing:$roomVersion"
+    implementation "androidx.room:room-ktx:$roomVersion"
+    kapt "androidx.room:room-compiler:$roomVersion"
+
+    // Lifecycle components
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifeCycle_version"
+
+    // ViewPager
+    implementation "androidx.viewpager2:viewpager2:$viewPager_version"
+
+    // Rx
+    implementation "io.reactivex.rxjava3:rxandroid:$rxAndroid_version"
+    implementation "io.reactivex.rxjava3:rxkotlin:$rxKotlin_version"
+
+    implementation "androidx.activity:activity-ktx:1.2.3"
+    implementation "androidx.fragment:fragment-ktx:1.3.5"
+
+    // Koin
+    implementation "io.insert-koin:koin-core:$koin_version"
+    implementation "io.insert-koin:koin-androidx-scope:$koin_version"
+    implementation "io.insert-koin:koin-androidx-viewmodel:$koin_version"
+    implementation "io.insert-koin:koin-androidx-fragment:$koin_version"
+
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.7'
+}

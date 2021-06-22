@@ -1,5 +1,7 @@
 package site.yoonsang.practicemvvm3.views
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -77,6 +79,16 @@ class DetailFragment : Fragment() {
                 Toast.makeText(requireContext(), "북마크에서 제거되었습니다", Toast.LENGTH_SHORT).show()
             }
             binding.detailSaveToggleButton.isChecked = _isChecked
+        }
+
+        binding.detailLinkButton.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(news.link))
+            startActivity(intent)
+        }
+
+        binding.detailOriginalLinkButton.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(news.originallink))
+            startActivity(intent)
         }
     }
 

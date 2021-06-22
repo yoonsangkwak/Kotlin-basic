@@ -1,0 +1,2 @@
+rootProject.name = "KoinPractice"
+include ':app'
